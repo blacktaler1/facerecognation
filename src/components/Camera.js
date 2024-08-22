@@ -44,12 +44,12 @@ export const Camera = () => {
     dispatch(setCameraStatus("closed"));
     dispatch(setScreenshot(screenshot));
     dispatch(setIsFlashing(true));
-
+  
     if (camera === true) {
       const formData = new FormData();
-
+  
       formData.append("photo", dataURLtoFile(screenshot, "photo.jpg"));
-
+  
       try {
         const apiKey = process.env.REACT_APP_API_KEY;
         const response = await fetch(
@@ -59,23 +59,31 @@ export const Camera = () => {
             body: formData,
           }
         );
-
+  
         if (!response.ok) {
           throw new Error("Failed to upload image", response);
         }
-
+  
         const data = await response.json();
         console.log("Image uploaded successfully:", data.name);
-        // setResponseMessage = data;
-
-        // Set the response message to display it
-        setResponseMessage( `Rasm mos keldi: ${data.name}` );
+  
+     
+        setResponseMessage(`Rasm mos keldi: ${data.name}`);
+  
+    
+        if(data.name !== 'unknown') {
+          window.location.href = "https://uztelecom.uz/"; 
+        }
+        else{
+          console.log("Noto'g'ri shaxs")
+        }
       } catch (error) {
         console.error("Error uploading image:", error);
         setResponseMessage("An error occurred while uploading the image.");
       }
     }
   };
+  
 
   // Helper function to convert base64 to file
   function dataURLtoFile(dataurl, filename) {
