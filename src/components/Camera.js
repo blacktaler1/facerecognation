@@ -21,6 +21,7 @@ import {
 } from "../features/auth/facenetSlice";
 
 import { Typography } from "@mui/material";
+import { Loader } from "./Loader";
 
 export const Camera = () => {
   var camera = false;
