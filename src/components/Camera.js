@@ -19,7 +19,7 @@ import {
   setFacenetMessage,
   setOutline,
 } from "../features/auth/facenetSlice";
-import { fontSize, margin } from "@mui/system";
+
 import { Typography } from "@mui/material";
 
 export const Camera = () => {
@@ -50,8 +50,9 @@ export const Camera = () => {
       formData.append("photo", dataURLtoFile(screenshot, "photo.jpg"));
 
       try {
+        const apiKey = process.env.REACT_APP_API_KEY;
         const response = await fetch(
-          "https://pulse.yasharhtml.xyz/api/identify-person/",
+          `${apiKey}`,
           {
             method: "POST",
             body: formData,
