@@ -21,7 +21,7 @@ import {
 } from "../features/auth/facenetSlice";
 
 import { Typography } from "@mui/material";
-import { Loader } from "./Loader";
+
 
 export const Camera = () => {
   var camera = false;
@@ -65,17 +65,17 @@ export const Camera = () => {
         }
   
         const data = await response.json();
-        console.log("Image uploaded successfully:", data.name);
+       
   
      
-        setResponseMessage(`Rasm mos keldi: ${data.name}`);
+        setResponseMessage(`${data.name}`);
   
     
         if(data.name !== 'unknown') {
           window.location.href = "https://uztelecom.uz/"; 
         }
         else{
-          console.log("Noto'g'ri shaxs")
+          
         }
       } catch (error) {
         console.error("Error uploading image:", error);
@@ -201,7 +201,7 @@ export const Camera = () => {
         }}
         onAnimationEnd={() => dispatch(setIsFlashing(false))}
       />
-      {responseMessage && <Typography sx={{margin:'20px', fontSize: '20px', color: 'white',}}>{responseMessage}</Typography>}
+      {responseMessage && <Typography sx={{margin:'20px', fontSize: '20px', color: 'white',}}>{responseMessage === 'unknown' ? `Rasm mos kelmadi:  ${responseMessage}`: `Rasm mos keldi: ${responseMessage}`}</Typography>}
     </div>
   );
 };
