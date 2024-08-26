@@ -71,12 +71,12 @@ export const Camera = () => {
         setResponseMessage(`${data.name}`);
   
     
-        if(data.name !== 'unknown') {
-          window.location.href = "https://uztelecom.uz/"; 
-        }
-        else{
+        // if(data.name !== 'unknown') {
+        //   window.location.href = "https://uztelecom.uz/"; 
+        // }
+        // else{
           
-        }
+        // }
       } catch (error) {
         console.error("Error uploading image:", error);
         setResponseMessage("An error occurred while uploading the image.");
@@ -118,7 +118,7 @@ export const Camera = () => {
     );
   
     let counter = 0;
-    let countdownStart = 4; // countdown from 4 seconds
+    let countdownStart = 3; // countdown from 4 seconds
     let detectedFace = false; // track continuous detection
   
     detection.current = setInterval(async () => {
@@ -131,7 +131,7 @@ export const Camera = () => {
       if (faces.length === 1 && faces[0].score > 0.75) {
         camera = true;
         if (!detectedFace) {
-          detectedFace = true; // start countdown only when face is first detected
+          detectedFace = true; 
         }
   
         counter++;
