@@ -178,8 +178,8 @@ export const Camera = () => {
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             screenshotQuality={1}
-            width={570}
-            height={700}
+            width={'100%'}
+            height={'50%'}
             mirrored={true}
             videoConstraints={{ facingMode: "user" }}
             onUserMedia={(e) => handleStreamVideo(e)}
@@ -201,7 +201,7 @@ export const Camera = () => {
         }}
         onAnimationEnd={() => dispatch(setIsFlashing(false))}
       />
-      {responseMessage && <Typography sx={{margin:'20px', fontSize: '20px', color: 'white',}}>{responseMessage === 'unknown' ? `Rasm mos kelmadi:  ${responseMessage}`: `Rasm mos keldi: ${responseMessage}`}</Typography>}
+      {responseMessage && <Typography sx={{ fontSize: '20px', color: 'white', padding:'10px'}}>{responseMessage === 'unknown' ? `Rasm mos kelmadi:  ${responseMessage}`: `Rasm mos keldi: ${responseMessage}`}</Typography>}
     </div>
   );
 };

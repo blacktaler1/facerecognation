@@ -16,14 +16,14 @@ export const FormTabs = () => {
 
   return (
     <>
-      <ul className="nav nav-tabs ">
+      {/* <ul className="nav nav-tabs ">
         <li
           className={"nav-item " + (activeTab === "login" ? "active" : "")}
           onClick={() => dispatch(setActiveTab("login"))}
         >
           Login
         </li>
-      </ul>
+      </ul> */}
       <div className="form-container">
         <Alert />
         <Login enableInput={enableInput} />

@@ -6,6 +6,9 @@
         opacity: 0;
     }
 }
+.preview{
+    
+}
 .camera-video{
     position: absolute;
     object-fit: cover;
@@ -51,6 +54,7 @@ video::-webkit-media-controls-play-button {
     border: 5px solid #ddd;
     z-index: 9;
     border-radius: 10px;
+ 
 }
 #preview-canvas{
     position: absolute;
@@ -63,6 +67,8 @@ video::-webkit-media-controls-play-button {
     z-index: 99;
     width: 100%;
     height: 100%;
+    padding: 20px;
+    
 }
 .camera-face-overlay {
     position: absolute;
