@@ -6,9 +6,7 @@
         opacity: 0;
     }
 }
-.preview{
-    
-}
+
 .camera-video{
     position: absolute;
     object-fit: cover;

@@ -178,8 +178,8 @@ export const Camera = () => {
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             screenshotQuality={1}
-            width={'100%'}
-            height={'50%'}
+            width={570}
+            height={700}
             mirrored={true}
             videoConstraints={{ facingMode: "user" }}
             onUserMedia={(e) => handleStreamVideo(e)}
