@@ -118,8 +118,8 @@ export const Camera = () => {
     );
   
     let counter = 0;
-    let countdownStart = 3; // countdown from 4 seconds
-    let detectedFace = false; // track continuous detection
+    let countdownStart = 3; 
+    let detectedFace = false; 
   
     detection.current = setInterval(async () => {
       
@@ -201,7 +201,7 @@ export const Camera = () => {
         }}
         onAnimationEnd={() => dispatch(setIsFlashing(false))}
       />
-      {responseMessage && <Typography sx={{ fontSize: '20px', color: 'white', padding:'10px'}}>{responseMessage === 'unknown' ? `Rasm mos kelmadi:  ${responseMessage}`: `Rasm mos keldi: ${responseMessage}`}</Typography>}
+      {responseMessage && <Typography sx={{ fontSize: '20px', color: 'white', padding:'10px'}}>{responseMessage === 'unknown' || responseMessage === 'Can you send another image?' ? `Rasm mos kelmadi:  ${responseMessage}`: `Rasm mos keldi: ${responseMessage}`}</Typography>}
     </div>
   );
 };

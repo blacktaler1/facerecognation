@@ -19,7 +19,7 @@ export const Alert = () => {
                 <li>{request.msg}</li>
             </ul>
         </div>
-        <div className={'alert alert-danger ' + (getErrorList.length === 0 ? 'hidden' : '')} role="alert">
+        <div className={'alert alert-danger ' + (getErrorList.length === 0 ? 'hidden' : '')} role="alert" >
             <ul>
                 {getErrorList.map((e,i) => {
                     if(Array.isArray(e)){

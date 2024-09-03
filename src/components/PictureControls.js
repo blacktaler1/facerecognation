@@ -2,6 +2,7 @@ import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getCameraStatus, getScreenshot, setCameraStatus, setScreenshot,  getActiveSource, } from "../features/auth/authSlice"
 import { setFacenetMessage, setOutline } from "../features/auth/facenetSlice"
+import AddPerson from "./addperson"
 
 export const PictureControls = () => {
 
@@ -42,9 +43,11 @@ export const PictureControls = () => {
                     className="zoom-out"
                     onClick={() => cameraStatus === 'closed' ? handleCameraOpening() : handleCameraClosing()}
                 >{screenshot != null ? 'Capture new image' : (cameraStatus === 'opened' ? 'Close Camera' : 'Open Camera')}</button>
+                
             }
             
         </div>
+        <AddPerson/>
         </>
     )
 }

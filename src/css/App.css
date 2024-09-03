@@ -9172,7 +9172,9 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
-
+.alert-danger{
+  margin-top: 10px;
+}
 .input100:focus + .focus-input100::after {
   top: -22px;
   font-size: 18px;
